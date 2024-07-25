@@ -36,7 +36,18 @@ public class Trabalhador {
     }
 
     public void calcularContrato(Integer ano, Integer mes){
+        Double soma = 0.0;
+        for (HoraContrato c : contratos) {
+            if(ano == c.getAno() && mes == c.getMes()){
+                soma += c.valorTotal();
+                    
+                
 
+            }
+        }
+
+        soma += salarioBase;
+            System.out.println("Valor total: " + soma);
     }
     
     public void cadastrar(){
@@ -90,6 +101,12 @@ public class Trabalhador {
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
+
+    public List<HoraContrato> getContratos() {
+        return contratos;
+    }
+
+    
 
     
 }   
